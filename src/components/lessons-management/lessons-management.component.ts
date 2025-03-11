@@ -13,7 +13,7 @@ import { Lesson } from '../../app/models/lesson';
 })
 export class LessonsManagementComponent implements OnInit {
 navigate() {
-this.router.navigate(['teachCourses',this.courseId,'lessons'])}
+  this.router.navigate(['../'], { relativeTo: this.route });}
 lessonId:string=""
 courseId:string=""
 lesson!:Lesson
@@ -49,7 +49,6 @@ deleteLesson()
 {
   this.lessonService.deleteLesson(this.lesson.courseId,this.lesson.id).subscribe({
     next: (data) => {
-      alert("course deleted succesfuly")
       this.router.navigate([`teachCourses/${this.courseId}/lessons`])
     },
     error: (err) => {

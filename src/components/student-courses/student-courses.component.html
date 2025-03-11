@@ -5,7 +5,7 @@
     <div class="courses-grid">
       @for(course of courses;track course.id)
       {
-        <mat-card class="course-card" [routerLink]="['/courses', course.id]">
+        <mat-card class="course-card" (click)="navToCourse(course.id)">
           <mat-card-title>{{ course.title }}</mat-card-title>
         </mat-card>
       }

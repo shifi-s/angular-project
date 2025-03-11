@@ -15,15 +15,13 @@ export class CourseManagementComponent implements OnInit{
 open=false
 course!: Course ;
 navigate(){
-  this.router.navigate(['teachCourses'])
-}
+  this.router.navigate(['../'], { relativeTo: this.route });}
 constructor(private courseService:CoursesService,private route:ActivatedRoute,private router:Router ) {
 }
   ngOnInit() {
-    const courseId = this.route.snapshot.paramMap.get('id')
+    const courseId = this.route.snapshot.paramMap.get('courseId')
     if(courseId)
     {
-     
       this.loadCourse(courseId)
     }
     

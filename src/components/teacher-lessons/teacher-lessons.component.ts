@@ -12,8 +12,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class TeacherLessonsComponent implements OnInit {
 navigate() {
-this.router.navigate(['teachCourses'])
-}
+  this.router.navigate(['../'], { relativeTo: this.route })}
+
 constructor(private lessonService: LessonService,private route:ActivatedRoute,private router:Router) {
 
 }
@@ -23,8 +23,9 @@ courseId=''
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.courseId = params.get('id') || '';
+      this.courseId = params.get('courseId')!
       if (this.courseId) {
+        
         this.loadLessons();
       }
     });
@@ -68,7 +69,7 @@ addLesson(){
     }
 
     navigateToLesson(lessonId: number) {
-      this.router.navigate([`/teachCourses/${this.courseId}/lessons/${lessonId}`]);
+      this.router.navigate([this.router.url,lessonId]);
     }
     
 

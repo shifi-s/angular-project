@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../app/services/courses.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -13,14 +13,17 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './student-courses.component.css'
 })
 export class StudentCoursesComponent implements OnInit {
+navToCourse(id:number) {
+this.router.navigate([this.router.url,id])}
   studentId: number = -1
   token: string = '';
   courses: any[] = [];
 
 
+
   constructor(
 
-    private courseService: CoursesService
+    private courseService: CoursesService,private router:Router
   ) { }
   ngOnInit() {
     this.studentId=Number(sessionStorage.getItem('userId'))

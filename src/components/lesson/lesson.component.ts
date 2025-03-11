@@ -11,7 +11,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 })
 export class LessonComponent implements OnInit {
 navigate() {
-this.router.navigate(['myCourses'])
+  this.router.navigate(['../'], { relativeTo: this.route })
 }
 
 constructor(private lessonService: LessonService,private route:ActivatedRoute,private router:Router) {
@@ -21,7 +21,7 @@ lessons:any[]=[]
 courseId=''
 ngOnInit() {
   
-  const courseId = this.route.snapshot.paramMap.get('id')
+  const courseId = this.route.snapshot.paramMap.get('courseId')
   if (courseId) {
     this.courseId=courseId
     this.loadLessons();
@@ -47,7 +47,7 @@ loadLessons(){
 }
 
 navigateToLesson(lessonId: number) {
-  this.router.navigate([`/courses/${this.courseId}/lessons/${lessonId}`]);
+  this.router.navigate([`${this.router.url}/${lessonId}`]);
 }
 
 

@@ -17,13 +17,16 @@ export const routes: Routes = [
    {path:'courses',component:AllCoursesComponent}
    ,{path:'login',component:LoginComponent}
    ,{path:'signIn',component:SignInComponent},
-   { path: 'courses/:id', component: CourseDetailsComponent },
-   {path:'courses/:id/lessons',component:LessonComponent},
+   { path: 'courses/:courseId', component: CourseDetailsComponent },
+   {path:'courses/:courseId/lessons',component:LessonComponent},
    {path:'myCourses',component:StudentCoursesComponent},
    {path:'teachCourses',component:CoursesComponent},
-   {path:'teachCourses/:id',component:CourseManagementComponent},
-   {path:"teachCourses/:id/lessons",component:TeacherLessonsComponent},
+   {path:'teachCourses/:courseId',component:CourseManagementComponent},
+   {path:"teachCourses/:courseId/lessons",component:TeacherLessonsComponent},
    {path:'courses/:courseId/lessons/:id',component:LessonDetailsComponent},
-   {path:'teachCourses/:courseId/lessons/:id',component:LessonsManagementComponent}
+   {path:'teachCourses/:courseId/lessons/:id',component:LessonsManagementComponent},
+   {path:"myCourses/:courseId",component:CourseDetailsComponent},
+   {path:"myCourses/:courseId/lessons",component:LessonComponent},
+   {path:"myCourses/:courseId/lessons/:id",component:LessonDetailsComponent}
 ];
 

@@ -22,8 +22,7 @@ ngOnInit() {
   this.loadLesson()
 }
 navigate() {
-  this.router.navigate(['courses/',this.courseId,'lessons'])
-  }
+  this.router.navigate(['../'], { relativeTo: this.route })  }
 
 loadLesson(){
   this.lessonService.getLesson(Number(this.courseId),Number(this.lessonId)).subscribe({

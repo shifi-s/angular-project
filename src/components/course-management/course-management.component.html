@@ -1,10 +1,11 @@
 <div class="page"><div class="course-actions-container">
-  @if(course) { <div>{{course.title}}</div>}
+  @if(course) { <div style="color: black; font-weight: bold;">{{course.title}}</div>
+<div style="color: black;">{{course.description}}</div>}
     @if(!open){<div >
         <button class="primary-btn edit-btn" (click)="openForm()">✏️ עריכת קורס</button>
         <button class="danger-btn delete-btn" (click)="deleteCourse()">🗑️ מחיקת קורס</button>
     </div>
-    @if(course){<button class="secondary-btn lessons-btn" [routerLink]="['/teachCourses/'+course.id,'lessons']">📚 מעבר לשיעורים</button>}
+    @if(course){<button class="secondary-btn lessons-btn" [routerLink]="['/teachCourses/',course.id,'lessons']">📚 מעבר לשיעורים</button>}
     }
 @else
     {<form  [formGroup]="myForm" (submit)="updateCourse()" class="edit-course-form">

@@ -13,6 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './course-details.component.css'
 })
 export class CourseDetailsComponent implements OnInit {
+navToLessons() {
+  this.router.navigate(['lessons'], { relativeTo: this.route })
+}
   course: any;
 
   constructor(private router:Router,private route: ActivatedRoute, private coursesService: CoursesService) {}
@@ -22,7 +25,7 @@ token=''
 userId=-1
 open=false
   ngOnInit() {
-    const courseId = this.route.snapshot.paramMap.get('id')
+    const courseId = this.route.snapshot.paramMap.get('courseId')
     this.token=sessionStorage.getItem('myToken')!
     this.userId=Number(sessionStorage.getItem('userId'))
     if (courseId) {
@@ -93,7 +96,6 @@ alert("נרשמת בהצלחה!")
     return false
   }
   navigate(){
-    this.router.navigate(["myCourses"])
-  }
+    this.router.navigate(['../'], { relativeTo: this.route });  }
   }
 
