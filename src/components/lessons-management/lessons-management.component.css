@@ -1,0 +1,44 @@
+.page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 20px;
+ }
+.return-button{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background-color:white;
+    opacity: 0.5;
+    color:rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: larger;
+   }
+ 
+.return-button:hover{
+opacity: 1;
+color:#2c3e50;
+font-weight: bold;
+ }
+.but{
+    
+    background-color:white;
+    color:#2c3e50;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: larger;
+}
+ 
+.but:hover{
+   background-color: black;
+   color: white;
+    font-weight: bold;
+     }

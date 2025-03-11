@@ -15,6 +15,9 @@ export class CourseManagementComponent implements OnInit{
 open=false
 course!: Course ;
 token=''
+navigate(){
+  this.router.navigate(['teachCourses'])
+}
 constructor(private courseService:CoursesService,private route:ActivatedRoute,private router:Router ) {
 }
   ngOnInit() {

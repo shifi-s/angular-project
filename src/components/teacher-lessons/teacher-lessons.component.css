@@ -107,7 +107,24 @@
         }
       }
     }
-  
+    .return-button{
+      position:absolute;
+      top:10px;
+      right:10px;
+      background-color:white;
+      opacity: 0.5;
+      color:rgb(0, 0, 0);
+      cursor: pointer;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: larger;
+     }
+   
+   .return-button:hover{
+  opacity: 1;
+  color:#2c3e50;
+  font-weight: bold;
+   }
     .add-lesson-button {
       background: #4caf50;
       color: white;

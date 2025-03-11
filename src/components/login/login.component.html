@@ -17,8 +17,10 @@
         <mat-error *ngIf="myForm.get('password')?.hasError('required')">שדה חובה</mat-error>
         <mat-error *ngIf="myForm.get('password')?.hasError('minlength')">לפחות 6 תווים</mat-error>
       </mat-form-field>
-
+<div class="buttons">
       <button mat-raised-button color="primary" type="submit" class="login-button">🔓 התחבר</button>
+      <button mat-raised-button color="primary"[routerLink]="['']" class="login-button">ביטול</button>
+    </div>
     </form>
 
     @if(errorMessage()) {

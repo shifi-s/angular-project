@@ -5,5 +5,5 @@ export interface Course {
   title: string;
   description: string;
   teacherId: number;
-  lessons:Lesson[]|null;
+  lessons:Lesson[]
 }

@@ -23,7 +23,7 @@ export const routes: Routes = [
    {path:'teachCourses',component:CoursesComponent},
    {path:'teachCourses/:id',component:CourseManagementComponent},
    {path:"teachCourses/:id/lessons",component:TeacherLessonsComponent},
-   {path:'courses/:courseId/lessons/:lessonId',component:LessonDetailsComponent},
-   {path:'teachCourses/:courseId/lessons/:lessonId',component:LessonsManagementComponent}
+   {path:'courses/:courseId/lessons/:id',component:LessonDetailsComponent},
+   {path:'teachCourses/:courseId/lessons/:id',component:LessonsManagementComponent}
 ];
 

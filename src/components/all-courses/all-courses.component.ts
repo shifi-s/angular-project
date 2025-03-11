@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CoursesService } from '../../app/services/courses.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -17,7 +17,7 @@ export class AllCoursesComponent {
   token=""
   role=""
   userId=-1
-  constructor(private coursesService: CoursesService) {}
+  constructor(private coursesService: CoursesService,private router:Router) {}
   
   ngOnInit() {
     this.loadCourses();
@@ -36,4 +36,9 @@ export class AllCoursesComponent {
       }
     });
   }
+  navigate(){
+    this.router.navigate(["myCourses"])
+  }
+  
+
 }

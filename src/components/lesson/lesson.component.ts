@@ -10,6 +10,9 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   styleUrl: './lesson.component.css'
 })
 export class LessonComponent implements OnInit {
+navigate() {
+this.router.navigate(['myCourses'])
+}
 
 constructor(private lessonService: LessonService,private route:ActivatedRoute,private router:Router) {
 

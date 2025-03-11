@@ -11,6 +11,9 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './teacher-lessons.component.css'
 })
 export class TeacherLessonsComponent implements OnInit {
+navigate() {
+this.router.navigate(['teachCourses'])
+}
 constructor(private lessonService: LessonService,private route:ActivatedRoute,private router:Router) {
 
 }

@@ -62,7 +62,7 @@ open=false
       next: (data) => {
         console.log(data);
         this.getCourses()
-
+alert("נרשמת בהצלחה!")
       },
       error: (err) => {
         console.error('Error fetching course:', err);
@@ -76,6 +76,7 @@ open=false
         console.log(data);
         
       this.getCourses()
+      alert("!עזבת בהצלחה")
       },
       error: (err) => {
         console.error('Error fetching course:', err);
@@ -90,6 +91,9 @@ open=false
       
     }
     return false
+  }
+  navigate(){
+    this.router.navigate(["myCourses"])
   }
   }
 

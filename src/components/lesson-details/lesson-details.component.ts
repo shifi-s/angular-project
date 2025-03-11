@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LessonService } from '../../app/services/lesson.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-lesson-details',
@@ -10,16 +10,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './lesson-details.component.css'
 })
 export class LessonDetailsComponent implements OnInit{
+
 lessonId:string=""
 courseId:string=""
 lesson:any
-  constructor(private lessonService:LessonService,private route:ActivatedRoute) {
+  constructor(private lessonService:LessonService,private route:ActivatedRoute,private router:Router) {
   }
 ngOnInit() {
-  this.lessonId=this.route.snapshot.paramMap.get('lessonId')!
+  this.lessonId=this.route.snapshot.paramMap.get('id')!
   this.courseId=this.route.snapshot.paramMap.get('courseId')!
   this.loadLesson()
 }
+navigate() {
+  this.router.navigate(['courses/',this.courseId,'lessons'])
+  }
 
 loadLesson(){
   this.lessonService.getLesson(Number(this.courseId),Number(this.lessonId)).subscribe({

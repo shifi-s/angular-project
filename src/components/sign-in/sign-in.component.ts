@@ -8,13 +8,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [ReactiveFormsModule,MatCardModule,MatSelectModule,MatOptionModule, MatInputModule, MatButtonModule, MatIconModule, CommonModule],
+  imports: [RouterLink,ReactiveFormsModule,MatCardModule,MatSelectModule,MatOptionModule, MatInputModule, MatButtonModule, MatIconModule, CommonModule],
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css']
 })

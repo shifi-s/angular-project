@@ -11,7 +11,11 @@
     text-align: center;
     padding: 20px;
 }
-
+.buttons{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 /* === כותרת העמוד === */
 .page-title {
     font-size: 36px;

@@ -27,8 +27,8 @@ export class LessonService {
     return this.http.post(`${this.apiUrl}/${courseId}/lessons`, { title, content }, { headers: this.getHeaders() });
   }
 
-  updateLesson(courseId: number, lessonId: number, title: string, content: string): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, { title, content }, { headers: this.getHeaders() });
+  updateLesson(courseId: number, lessonId: number, data:any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, data, { headers: this.getHeaders() });
   }
 
   deleteLesson(courseId: number, lessonId: number): Observable<any> {

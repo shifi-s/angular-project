@@ -1,2 +1,5 @@
-<div>{{lesson.title}}</div>
-<div>{{lesson.content}}</div>
+<div class="page">@if(lesson)
+{<h1 >{{lesson.title}}</h1>
+<h2>{{lesson.content}}</h2>}
+<button class="return-button" (click)="navigate()"> לחזרה לשעורים</button>
+</div>
