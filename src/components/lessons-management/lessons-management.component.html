@@ -1,7 +1,7 @@
 <div class="page">
 @if(open)
 {
-    <form [formGroup]="myForm" (ngSubmit)="updateLesson()">
+    <form [formGroup]="myForm" (submit)="updateLesson()">
         <label>title: <input formControlName="title" /></label>
         <br />
         <label>content: <input formControlName="content" /></label>

@@ -7,7 +7,7 @@
     @if(course){<button class="secondary-btn lessons-btn" [routerLink]="['/teachCourses/'+course.id,'lessons']">📚 מעבר לשיעורים</button>}
     }
 @else
-    {<form  [formGroup]="myForm" (ngSubmit)="updateCourse()" class="edit-course-form">
+    {<form  [formGroup]="myForm" (submit)="updateCourse()" class="edit-course-form">
         <h2>✏️ עריכת קורס</h2>
         <label class="input-label">כותרת הקורס:</label>
         <input formControlName="title" class="input-field" placeholder="הזן כותרת חדשה" />

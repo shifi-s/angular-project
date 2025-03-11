@@ -15,7 +15,7 @@
         <div class="lesson-form">
             <h2 class="form-title">➕ הוסף שיעור חדש</h2>
 
-            <form [formGroup]="myForm" (ngSubmit)="addLesson()">
+            <form [formGroup]="myForm" (submit)="addLesson()">
                 <label class="form-label">כותרת השיעור:</label>
                 <input formControlName="title" class="form-input" placeholder="הזן כותרת" />
 

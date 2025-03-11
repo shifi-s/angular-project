@@ -2,20 +2,20 @@
   <h1 class="page-title">🔑 התחבר למערכת</h1>
 
   <mat-card class="login-card">
-    <form [formGroup]="this.myForm" (ngSubmit)="this.submitForm()">
+    <form [formGroup]="this.myForm" (submit)="this.submitForm()">
       
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>אימייל</mat-label>
         <input matInput type="email" formControlName="email" autocomplete="email">
-        <mat-error *ngIf="myForm.get('email')?.hasError('required')">שדה חובה</mat-error>
-        <mat-error *ngIf="myForm.get('email')?.hasError('email')">אימייל לא תקין</mat-error>
+        @if(myForm.get('email')?.hasError('required')){<mat-error>שדה חובה</mat-error>}
+       @if(myForm.get('email')?.hasError('email')){ <mat-error>אימייל לא תקין</mat-error>}
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>סיסמה</mat-label>
         <input matInput type="password" formControlName="password" autocomplete="current-password">
-        <mat-error *ngIf="myForm.get('password')?.hasError('required')">שדה חובה</mat-error>
-        <mat-error *ngIf="myForm.get('password')?.hasError('minlength')">לפחות 6 תווים</mat-error>
+       @if(myForm.get('password')?.hasError('required')){ <mat-error>שדה חובה</mat-error>}
+      @if(myForm.get('password')?.hasError('minlength')){  <mat-error >לפחות 6 תווים</mat-error>}
       </mat-form-field>
 <div class="buttons">
       <button mat-raised-button color="primary" type="submit" class="login-button">🔓 התחבר</button>
