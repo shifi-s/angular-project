@@ -1,0 +1,131 @@
+/* === קונטיינר כללי לכל האזור === */
+.course-actions-container {
+    width: 90%;
+    max-width: 600px;
+    background:white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+    backdrop-filter: blur(10px); /* טשטוש רקע */
+}
+.page{ width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 20px;}
+/* === עיצוב כפתורים כהים עם זוהר === */
+button {
+    font-size: 16px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    background: #121212;
+    box-shadow: 0px 0px 10px rgba(147, 112, 219, 0.8);
+}
+
+button:hover {
+    background: #222;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(147, 112, 219, 1);
+}
+
+/* === כפתורים שונים בהתאמה לצבעי הממשק שלך === */
+.edit-btn {
+    background: #3F51B5;
+}
+
+.edit-btn:hover {
+    background: #303F9F;
+}
+
+.delete-btn {
+    background: #E53935;
+}
+
+.delete-btn:hover {
+    background: #C62828;
+}
+
+.lessons-btn {
+    background: #673AB7;
+}
+
+.lessons-btn:hover {
+    background: #512DA8;
+}
+
+/* === עיצוב טופס העריכה עם שקיפות ורקע כהה === */
+.edit-course-form {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+h2 {
+    color: white;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* === עיצוב שדות קלט כהים עם טקסט בהיר === */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #888;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: right;
+    box-shadow: 0px 0px 10px rgba(147, 112, 219, 0.5);
+}
+
+/* === טקסט בתוך הקלט === */
+.input-field::placeholder {
+    color: #bbb;
+    opacity: 0.8;
+}
+
+/* === עיצוב שדה טקסט ארוך (טקסט-אראה) === */
+.textarea-field {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* === כותרות שדות קלט === */
+.input-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+    width: 100%;
+}
+
+/* === התאמות רספונסיביות === */
+@media screen and (max-width: 600px) {
+    .course-actions-container {
+        width: 95%;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="page">
+<mat-card class="courses-container">
+    <h2 class="title">📚 הקורסים שלי</h2>
+  
+    <div class="courses-grid">
+      @for(course of courses;track course.id)
+      {
+        <mat-card class="course-card" [routerLink]="['/courses', course.id]">
+          <mat-card-title>{{ course.title }}</mat-card-title>
+        </mat-card>
+      }
+    </div>
+  
+    <button mat-raised-button color="accent" class="all-courses-button" [routerLink]="['/courses']">
+      🔍 צפייה בכל הקורסים
+    </button>
+</mat-card>
+</div>

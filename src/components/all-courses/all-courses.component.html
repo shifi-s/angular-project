@@ -1,0 +1,17 @@
+<div class="courses-page">
+    <h1 class="page-title">📚 הקורסים שלנו</h1>
+  
+    <div class="courses-grid">
+      @for(course of courses;track course.id)
+      {
+        <mat-card class="course-card">
+          <mat-card-content>
+            <button mat-raised-button color="primary" class="course-button" [routerLink]="['/courses', course.id]">
+              {{ course.title }}
+            </button>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </div>
+  

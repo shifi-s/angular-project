@@ -1,0 +1,136 @@
+.lessons-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    background: linear-gradient(135deg, #1e1e2f, #3a3a56);
+    color: #fff;
+    min-height: 100vh;
+  
+    .page-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffcc00;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+  
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 900px;
+    }
+  
+    .lesson-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+  
+      .lesson-button {
+        background: #ffcc00;
+        color: #1e1e2f;
+        border: none;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s;
+  
+        &:hover {
+          background: #ffdb4d;
+        }
+      }
+    }
+  
+    .lesson-form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.5s ease-in-out;
+  
+      .form-title {
+        color: #ffcc00;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+  
+      .form-label {
+        display: block;
+        font-weight: bold;
+        margin: 10px 0 5px;
+      }
+  
+      .form-input,
+      .form-textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 1rem;
+  
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+  
+        &:focus {
+          outline: 2px solid #ffcc00;
+        }
+      }
+  
+      .form-textarea {
+        height: 100px;
+        resize: none;
+      }
+  
+      .submit-button {
+        background: #ff5722;
+        margin-top: 10px;
+  
+        &:hover {
+          background: #ff784e;
+        }
+      }
+    }
+  
+    .add-lesson-button {
+      background: #4caf50;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+  
+      &:hover {
+        background: #66bb6a;
+      }
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

@@ -1,0 +1,47 @@
+<div class="teacher-courses-page">
+    <h1 class="page-title">👩‍🏫 הקורסים שלך</h1>
+  
+    <div class="courses-grid">
+      @for(course of courses;track course.id)
+      {
+        @if(course.teacherId === userId)
+        {
+          <mat-card class="course-card">
+            <mat-card-content>
+              <button mat-raised-button color="primary" class="course-button" 
+                [routerLink]="['/teachCourses', course.id]">
+                {{ course.title }}
+              </button>
+            </mat-card-content>
+          </mat-card>
+        }
+      }
+    </div>
+  
+    @if(open)
+    {
+      <mat-card class="add-course-card">
+        <mat-card-title>➕ הוספת קורס</mat-card-title>
+        <form [formGroup]="myForm" (ngSubmit)="addCourse()" class="add-course-form">
+          <mat-form-field appearance="outline">
+            <mat-label>כותרת הקורס</mat-label>
+            <input matInput formControlName="title" required />
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>תיאור הקורס</mat-label>
+            <input matInput formControlName="description" required />
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" type="submit">📤 שלח</button>
+        </form>
+      </mat-card>
+    }
+    @else
+    {
+      <button mat-raised-button color="accent" class="add-course-button" (click)="openForm()">
+        ➕ הוספת קורס חדש
+      </button>
+    }
+  </div>
+  

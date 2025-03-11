@@ -1,0 +1,23 @@
+<div class="page"><div class="course-actions-container">
+  @if(course) { <div>{{course.title}}</div>}
+    @if(!open){<div >
+        <button class="primary-btn edit-btn" (click)="openForm()">✏️ עריכת קורס</button>
+        <button class="danger-btn delete-btn" (click)="deleteCourse()">🗑️ מחיקת קורס</button>
+    </div>
+    @if(course){<button class="secondary-btn lessons-btn" [routerLink]="['/teachCourses/'+course.id,'lessons']">📚 מעבר לשיעורים</button>}
+    }
+@else
+    {<form  [formGroup]="myForm" (ngSubmit)="updateCourse()" class="edit-course-form">
+        <h2>✏️ עריכת קורס</h2>
+        <label class="input-label">כותרת הקורס:</label>
+        <input formControlName="title" class="input-field" placeholder="הזן כותרת חדשה" />
+        
+        <label class="input-label">תיאור הקורס:</label>
+        <textarea formControlName="description" class="input-field textarea-field" placeholder="הזן תיאור חדש"></textarea>
+        
+        <button type="submit" class="primary-btn save-btn">💾 שמור</button>
+    </form>
+    }
+  
+</div>
+</div>

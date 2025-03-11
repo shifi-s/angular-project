@@ -1,0 +1,49 @@
+<div class="signup-page">
+  <h1 class="page-title">📝 הרשמה למערכת</h1>
+
+  <mat-card class="signup-card">
+    <form [formGroup]="this.myForm" (ngSubmit)="this.submitForm()">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>שם מלא</mat-label>
+        <input matInput type="text" formControlName="fullName" autocomplete="name">
+        <mat-error *ngIf="myForm.get('fullName')?.hasError('required')">שדה חובה</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>אימייל</mat-label>
+        <input matInput type="email" formControlName="email" autocomplete="email">
+        <mat-error *ngIf="myForm.get('email')?.hasError('required')">שדה חובה</mat-error>
+        <mat-error *ngIf="myForm.get('email')?.hasError('email')">אימייל לא תקין</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>סיסמה</mat-label>
+        <input matInput type="password" formControlName="password" autocomplete="new-password">
+        <mat-error *ngIf="myForm.get('password')?.hasError('required')">שדה חובה</mat-error>
+        <mat-error *ngIf="myForm.get('password')?.hasError('minlength')">לפחות 6 תווים</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>תפקיד</mat-label>
+        <mat-select formControlName="role">
+          <mat-option value="student">סטודנט</mat-option>
+          <mat-option value="teacher">מורה</mat-option>
+        </mat-select>
+        <mat-error *ngIf="myForm.get('role')?.hasError('required')">שדה חובה</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="signup-button">📝 הירשם</button>
+    </form>
+
+    @if(errorMessage()) {
+      <mat-card class="error-message">
+        <mat-icon color="warn">error_outline</mat-icon>
+        <span>{{ errorMessage() }}</span>
+        <button mat-icon-button (click)="clearError()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-card>
+    }
+  </mat-card>
+</div>

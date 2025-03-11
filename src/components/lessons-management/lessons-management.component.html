@@ -1,0 +1,13 @@
+<button (click)="deleteLesson()">delete lesson</button>
+
+@if(open)
+{
+    <form [formGroup]="myForm" (ngSubmit)="updateLesson()">
+        <label>title: <input formControlName="title" /></label>
+        <br />
+        <label>content: <input formControlName="content" /></label>
+        <br />
+        <button type="submit">send</button>
+    </form>
+}
+@else {<button (click)="openForm()">edit lesson</button>}

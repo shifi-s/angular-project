@@ -1,0 +1,76 @@
+/* === רקע כללי של עמוד הקורסים === */
+.courses-container {
+    width: 90vw;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.courses-container:hover {
+    transform: scale(1.02);
+}
+
+/* === כותרת הדף === */
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* === רשת הקורסים === */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* === כרטיסי קורסים === */
+.course-card {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* === כפתור צפייה בכל הקורסים === */
+.all-courses-button {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #ff4081;
+    color: white;
+}
+
+.all-courses-button:hover {
+    background-color: #d81b60;
+}
+.page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 20px;}
