@@ -29,7 +29,7 @@ export class StudentCoursesComponent implements OnInit {
   }
 
   loadCourses() {
-    this.courseService.getCoursesByStudentId(this.studentId, this.token)
+    this.courseService.getCoursesByStudentId(this.studentId)
     .subscribe({
       next: (response) => {
         console.log('Course added successfully:', response);

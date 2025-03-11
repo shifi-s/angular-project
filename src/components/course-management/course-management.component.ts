@@ -14,7 +14,6 @@ import { Course } from '../../app/models/course';
 export class CourseManagementComponent implements OnInit{
 open=false
 course!: Course ;
-token=''
 navigate(){
   this.router.navigate(['teachCourses'])
 }
@@ -22,7 +21,6 @@ constructor(private courseService:CoursesService,private route:ActivatedRoute,pr
 }
   ngOnInit() {
     const courseId = this.route.snapshot.paramMap.get('id')
-    this.token=sessionStorage.getItem('myToken')!
     if(courseId)
     {
      
@@ -48,7 +46,7 @@ constructor(private courseService:CoursesService,private route:ActivatedRoute,pr
   }
   updateCourse() {
     const courseData=this.myForm.getRawValue()
-    this.courseService.updateCourse(String(this.course.id), courseData, this.token)
+    this.courseService.updateCourse(String(this.course.id), courseData)
     .subscribe({
       next: (data) => {
         this.myForm.reset()
@@ -69,7 +67,7 @@ constructor(private courseService:CoursesService,private route:ActivatedRoute,pr
       });
   
       deleteCourse(){
-        this.courseService.deleteCourse(this.course.id,sessionStorage.getItem('myToken')!).subscribe({
+        this.courseService.deleteCourse(this.course.id).subscribe({
           next: (response) => {
             console.log('Course deleted successfully:', response);
             this.router.navigate(['/teachCourses'])

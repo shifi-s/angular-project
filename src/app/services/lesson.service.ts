@@ -11,27 +11,24 @@ export class LessonService {
 
   constructor(private http: HttpClient) {}
 
-  private getHeaders(): HttpHeaders {
-    return new HttpHeaders({ 'Authorization': `Bearer ${sessionStorage.getItem('myToken')}` });
-  }
 
   getLessons(courseId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${courseId}/lessons`, { headers: this.getHeaders() });
+    return this.http.get(`${this.apiUrl}/${courseId}/lessons`);
   }
 
   getLesson(courseId: number, lessonId: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, { headers: this.getHeaders() });
+    return this.http.get(`${this.apiUrl}/${courseId}/lessons/${lessonId}`);
   }
 
   createLesson(courseId: number, title: string, content: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${courseId}/lessons`, { title, content }, { headers: this.getHeaders() });
+    return this.http.post(`${this.apiUrl}/${courseId}/lessons`, { title, content });
   }
 
   updateLesson(courseId: number, lessonId: number, data:any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, data, { headers: this.getHeaders() });
+    return this.http.put(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, data);
   }
 
   deleteLesson(courseId: number, lessonId: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${courseId}/lessons/${lessonId}`, { headers: this.getHeaders() });
+    return this.http.delete(`${this.apiUrl}/${courseId}/lessons/${lessonId}`);
   }
 }

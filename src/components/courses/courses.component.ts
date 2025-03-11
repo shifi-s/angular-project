@@ -22,14 +22,12 @@ export class CoursesComponent implements OnInit{
   courses: any[] = []
   course:any
   open:boolean=false
-  token=""
   role=""
   userId=-1
   constructor(private coursesService: CoursesService) {}
   
   ngOnInit() {
     this.loadCourses();
-    this.token=sessionStorage.getItem('myToken')!
     this.role=sessionStorage.getItem('role')!
     this.userId=Number(sessionStorage.getItem('userId'))
   }
@@ -51,7 +49,7 @@ export class CoursesComponent implements OnInit{
   
     console.log('Adding course:', courseData); 
      
-    this.coursesService.createCourse(courseData,this.token).subscribe({
+    this.coursesService.createCourse(courseData).subscribe({
       next: (response) => {
         console.log('Course added successfully:', response);
         this.loadCourses();

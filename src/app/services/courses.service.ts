@@ -11,89 +11,48 @@ export class CoursesService {
   constructor(private http: HttpClient) {}
 
   getCourses(): Observable<any> {
-    const token = sessionStorage.getItem('myToken'); 
 
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
-
-    return this.http.get<any[]>(this.apiUrl, { headers });
+    return this.http.get<any[]>(this.apiUrl);
   }
 
   getCourseById(id: string): Observable<any> {
-    const token = sessionStorage.getItem('myToken')
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
 
-    return this.http.get<any>(`${this.apiUrl}/${id}`, { headers });
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  createCourse(courseData: any, token: string): Observable<any> {
-    return this.http.post(this.apiUrl, courseData, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-      })
-    });
+  createCourse(courseData: any): Observable<any> {
+    return this.http.post(this.apiUrl, courseData);
   }
 
-  updateCourse(courseId: string, courseData: any, token: string): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${courseId}`, courseData, { headers: new HttpHeaders({
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    })});
+  updateCourse(courseId: string, courseData: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${courseId}`, courseData);
     
   }
 
 
 
-  deleteCourse(id: number, token: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${token}`
-      })
-    });
+  deleteCourse(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
-  enrollStudent(courseId: number, userId: number, token: string): Observable<any> {
+  enrollStudent(courseId: number, userId: number): Observable<any> {
     const url = `${this.apiUrl}/${courseId}/enroll`;
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    });
-
+  
     const body = { userId: userId };
 
-    return this.http.post(url, body, { headers });
+    return this.http.post(url, body);
   }
 
-  // unEnrollStudent(courseId: number, userId: number, token: string): Observable<any> {
-  //   const url = `${this.apiUrl}/${courseId}/unenroll`;
-  //   const headers = new HttpHeaders({
-  //     'Authorization': `Bearer ${token}`,
-  //     'Content-Type': 'application/json'
-  //   });
 
-      unenrollFromCourse(courseId: number, userId: number, token: string): Observable<any> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    });
-    // const body = { userId: userId };
-    // return this.http.post( body, { headers });
-    
+      unenrollFromCourse(courseId: number, userId: number): Observable<any> {
     const body = { userId }; 
 
-    return this.http.delete(`${this.apiUrl}/${courseId}/unenroll`, { headers, body });
+    return this.http.delete(`${this.apiUrl}/${courseId}/unenroll`, {  body });
   }
 
-  getCoursesByStudentId(studentId: number, token: string): Observable<any> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    });
+  getCoursesByStudentId(studentId: number): Observable<any> {
 
-    return this.http.get(`${this.apiUrl}/student/${studentId}`, { headers });
+    return this.http.get(`${this.apiUrl}/student/${studentId}`);
   }
 }
 

@@ -45,7 +45,7 @@ open=false
     });
   }
   getCourses(){
-    this.coursesService.getCoursesByStudentId(this.userId, this.token)
+    this.coursesService.getCoursesByStudentId(this.userId)
     .subscribe({
       next: (response) => {
         console.log('Course added successfully:', response);
@@ -57,7 +57,7 @@ open=false
     });
   }
   enrollStudent() {
-    this.coursesService.enrollStudent(Number(this.courseId), this.userId, this.token)
+    this.coursesService.enrollStudent(Number(this.courseId), this.userId)
     .subscribe({
       next: (data) => {
         console.log(data);
@@ -70,7 +70,7 @@ alert("נרשמת בהצלחה!")
     });
   }
   unEnrollStudent() {
-    this.coursesService.unenrollFromCourse(Number(this.courseId), this.userId, this.token)
+    this.coursesService.unenrollFromCourse(Number(this.courseId), this.userId)
         .subscribe({
       next: (data) => {
         console.log(data);
