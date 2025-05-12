@@ -1,4 +1,4 @@
-/* עיצוב עמוד מלא עם רקע כהה */
+
 .course-page {
     width: 100vw;
     height: 100vh;
@@ -11,7 +11,7 @@
     padding: 20px;
   }
   
-  /* כרטיס פרטי הקורס */
+
   .course-details-card {
     width: 70%;
     max-width: 800px;
